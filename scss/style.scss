@@ -1,0 +1,172 @@
+/* ==========================================================================
+   Foundation
+   ========================================================================== */
+
+/* Reset
+   ----------------------------------------------------------------- */
+
+/* Base
+   ----------------------------------------------------------------- */
+//bodyタグに関するプロパティ
+
+/* ==========================================================================
+   Layout
+   ========================================================================== */
+
+/* Header
+   ----------------------------------------------------------------- */
+
+   //#header
+
+   /* Main
+      ----------------------------------------------------------------- */
+   
+   //#main
+   
+
+
+// ==============================
+// 変数
+// ==============================
+$background-color_main:  #29539c;
+$backgorund-color_sub: #e7edf7;
+$color_corp:  #f6f8f9;
+$background-color_extra:  #e5e5e5;
+
+$font-color-default: #1e1e1e;
+
+$site-width: 980px;
+$large-image-height: 200px;
+
+$font-size_s: 12px;
+$font-size_m: 14px;
+$font-size_default: 16px;
+$font-size_l: 18px;
+$font-size_xl: 24px;
+$font-size_xxl: 30px;
+$font-size_3l: 38px;
+
+$space_s: 5px;
+$space_m: 10px;
+$space_l: 15px;
+$space_xl: 20px;
+$space_xxl: 30px;
+
+// マップ型変数
+$breakpoints: (
+  'sm': 'screen and (max-width: 414px)',
+  'md': 'screen and (max-width: 768px)',
+  'lg': 'screen and (max-width: 1000px)',
+) !default;
+
+
+//mixin
+@mixin mq($breakpoint: sm) {
+    @media #{map-get($breakpoints, $breakpoint)} {
+      @content;
+    }
+}
+@mixin mq_ipad($breakpoint: md) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+    }
+}
+
+// ==================================
+// base
+// ==================================
+
+html, body {
+    width: 100%;
+    color: $font-color_default;
+    font-size: $font-size_default;
+    font-family: 'Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック',YuGothic,'Yu Gothic','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic';
+    line-height: 1.5;
+    text-size-adjust: 100%;
+    letter-spacing: 0em;
+}
+
+p, a {
+    -webkit-font-smoothing: antialiased;
+}
+  
+a {
+    color: $font-color_default;
+    text-decoration: none;
+    transition: .2s;
+}
+
+a:hover {
+    color: $background-color_main;
+    transition: .2s;
+}
+
+img {
+    width: 100%;
+    vertical-align: bottom;
+}
+
+// ==================================
+// header
+// ==================================
+#l-header{
+    width: $site-width;
+}
+
+.header-section-wrap{
+    width: 100%;
+    height: 80px;
+    height: $large-image-height;
+    display: flex;
+}
+.header-section-box{
+    align-items: flex-end;
+    display: flex;
+}
+.title-logo{
+    margin: $space_s $space_m;
+}
+
+.tel{
+    align-items: center;
+}
+
+.tel1{
+    font-size: $font-size_m;
+}
+
+.tel2{
+    font-size: $font-size_l;
+}
+
+.tel3{
+    font-size: $font-size_s;
+}
+.contact{
+    color: #FFFFFF;
+    font-size: $font-size_m;
+    margin: $space_m;
+    padding: $space_m;
+    align-items: center;
+    background-color: $background-color_main;
+}
+
+// ==================================
+// menu
+// ==================================
+
+.menu {
+    display: flex;
+    align-items: center;
+    &-item{
+        font-size: $font-size_m;
+        border-bottom: 3px solid $background-color_main;
+        margin-right: $space_xl;
+    }
+}
+
+
+// ==================================
+// container
+// ==================================
+

@@ -1,0 +1,83 @@
+@charset "UTF-8";
+/* ==========================================================================
+   Foundation
+   ========================================================================== */
+/* Reset
+   ----------------------------------------------------------------- */
+/* Base
+   ----------------------------------------------------------------- */
+/* ==========================================================================
+   Layout
+   ========================================================================== */
+/* Header
+   ----------------------------------------------------------------- */
+/* Main
+      ----------------------------------------------------------------- */
+html, body {
+  width: 100%;
+  color: #1e1e1e;
+  font-size: 16px;
+  font-family: 'Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック',YuGothic,'Yu Gothic','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic';
+  line-height: 1.5;
+  text-size-adjust: 100%;
+  letter-spacing: 0em; }
+
+p, a {
+  -webkit-font-smoothing: antialiased; }
+
+a {
+  color: #1e1e1e;
+  text-decoration: none;
+  transition: .2s; }
+
+a:hover {
+  color: #29539c;
+  transition: .2s; }
+
+img {
+  width: 100%;
+  vertical-align: bottom; }
+
+#l-header {
+  width: 980px; }
+
+.header-section-wrap {
+  width: 100%;
+  height: 80px;
+  height: 200px;
+  display: flex; }
+
+.header-section-box {
+  align-items: flex-end;
+  display: flex; }
+
+.title-logo {
+  margin: 5px 10px; }
+
+.tel {
+  align-items: center; }
+
+.tel1 {
+  font-size: 14px; }
+
+.tel2 {
+  font-size: 18px; }
+
+.tel3 {
+  font-size: 12px; }
+
+.contact {
+  color: #FFFFFF;
+  font-size: 14px;
+  margin: 10px;
+  padding: 10px;
+  align-items: center;
+  background-color: #29539c; }
+
+.menu {
+  display: flex;
+  align-items: center; }
+  .menu-item {
+    font-size: 14px;
+    border-bottom: 3px solid #29539c;
+    margin-right: 20px; }
