@@ -18,10 +18,14 @@
 
    //#header
 
-   /* Main
-      ----------------------------------------------------------------- */
-   
-   //#main
+/* Main
+    ----------------------------------------------------------------- */
+
+#l-main{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
    
 
 
@@ -73,6 +77,8 @@ $breakpoints: (
     }
 }
 
+
+
 // ==================================
 // base
 // ==================================
@@ -114,6 +120,15 @@ img {
 #l-header{
     width: $site-width;
     margin: 0 auto;
+    @include mq{
+        width: 100%;
+        height: 70px;
+        background-color: #FFFFFF;
+        position: fixed;
+    }
+    @include mq_ipad{
+        width: 100%;
+    }
 }
 
 .header-section-wrap{
@@ -121,20 +136,43 @@ img {
     height: 80px;
     display: flex;
     padding: 10px 0 40px 0;
+    @include mq{
+        height: 51px;
+        margin-right: 20px;
+        padding: 10px 0 10px 0;
+        position: relative;
+    }
 }
 .header-section-box{
     align-items: flex-end;
     display: flex;
+    &-right{
+        @include mq{
+            width: 100%;
+            margin: auto 0;
+        }
+    }
 }
 .header-contact{
     width: 250px;
     margin-left: 40px;
+    @include mq_ipad{
+        display: none;
+    }
+    @include mq{
+        display: none;
+    }
 }
 
 .title-logo{
     width : 224px;
     height : 51px;
     margin-right : 40px;
+    margin-left: 20px;
+    @include mq{
+        top: 5px;
+    }
+
 }
 
 .tel{
@@ -168,28 +206,25 @@ img {
 // ==================================
 // menu
 // ==================================
-
-.menu {
-    display: flex;
-    align-items: center;
-    &-item{
-        font-size: $font-size_m;
-        font-weight: 600;
-        text-align: center;
-        border-bottom: 5px solid $backgorund-color_sub;
-        margin-bottom: $space_m;
-        padding: $space_m;
-    }
-}
+  
 .main-image{
     width: 100%;
     background-image: url("../img/main-image.jpg");
     background-size: cover;
     background-color: $background-color_extra;
+    @include mq{
+        padding-top: 70px;
+    }
     &-wrap{
         width: 980px;
         margin: 0 auto;
         padding: $space_3xl $space_l $space_3xl 60px;
+        @include mq{
+            width: 100%;
+            padding: $space_3xl 0 $space_3xl 0;
+            text-align: center;
+        }
+
     }
     &-preCopy{
         color: #FFFFFF;
@@ -208,6 +243,107 @@ img {
     }
 }
 
+.nav-menu {
+    margin-top: 30px;
+    @include mq() {
+    margin-top: 0px;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: -100%;
+    background: rgba(255, 255, 255, .85);
+    width: 100%;
+    height: 100vh;
+    padding-top: 50px;
+    transition: .5s;
+    &.active {
+        transition: .5s;
+        transform: translateX(-100%);
+        z-index: 2;
+        }
+    }
+    @include mq_ipad{
+        margin-left: auto;
+        margin-right: 20px;
+    }
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    @include mq{
+        display: block;
+        margin-top: 20px;
+    }
+    &-item{
+        font-size: $font-size_m;
+        font-weight: 600;
+        text-align: center;
+        border-bottom: 5px solid $backgorund-color_sub;
+        margin-bottom: $space_m;
+        padding: $space_m;
+        @include mq{
+            margin-bottom: 0;
+            border-bottom: 1px solid $background-color_extra;
+            background-color: #FFFFFF;
+            font-size: $font-size_l;    
+            font-weight: 500;
+        }
+        @include mq_ipad{
+            font-size: $font-size_m;
+        }
+    }
+    &-top{
+        @include mq{
+            border-top: 1px solid $background-color_extra
+        }
+    }
+}
+
+.menu-trigger {
+    display: none;
+    @include mq() {
+      display: inline-block;
+      margin: 0 auto;
+    }
+    transition: all .4s;
+    box-sizing: border-box;
+    position: relative;
+    width: 40px;
+    height: 32px;
+    z-index: 3;
+    span {
+      display: inline-block;
+      transition: all .4s;
+      box-sizing: border-box;
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background-color: $font-color_default;
+      border-radius: 4px;
+      &:nth-of-type(1) {
+        top: 0;
+      }
+      &:nth-of-type(2) {
+        top: 14px;
+      }
+      &:nth-of-type(3) {
+        bottom: 0;
+      }
+    }
+    &.active span {
+      &:nth-of-type(1) {
+        transform: translateY(12px) rotate(-45deg);
+      }
+      &:nth-of-type(2) {
+        opacity: 0;
+      }
+      &:nth-of-type(3) {
+        transform: translateY(-15px) rotate(45deg);
+      }
+    }
+}
 
 // ==================================
 // container
@@ -215,6 +351,12 @@ img {
 
 .section-box{
     width: 980px;
+    @include mq{
+        width: 100%;
+    }
+    @include mq_ipad{
+        width: 100%
+    }
     margin: 0 auto;
     padding-top: 50px;
     border-top: 0.5px solid $background-color_extra;
@@ -222,6 +364,10 @@ img {
         width: 220px;
         margin: 0 $space_m;
         align-items: top;
+        @include mq{
+            width: 100%;
+            margin: 0 auto 30px auto;
+        }
     }
     &-inner > h3, &-voiceInner > h3{
         font-size: $font-size_m + 1;
@@ -235,7 +381,11 @@ img {
     }
     &-voiceInner{
         width: 400px;
-        margin: 0 $space_m;
+        @include mq{
+            width: 100%;
+            margin: 0 auto 30px auto;
+        }
+        margin: 0 10px 30px 10px;
         align-items: top;
     }
     &-voiceInner > span{
@@ -245,16 +395,31 @@ img {
     }
 }
 .section-wrap{
-    margin-bottom: 30px;
-    padding: 0 $space_m;
+    margin: 0 auto 30px auto;
+    padding: 0 $space_xl;
     display: flex;
+    @include mq{
+        flex-wrap: wrap;
+    }
+    @include mq_ipad{
+        flex-wrap: wrap;
+    }
 }
 .section-wrap-voice{
     margin: 0 auto;
     display: flex;
+    @include mq{
+        flex-wrap: wrap;
+    }
+    @include mq_ipad{
+        flex-wrap: wrap;
+    }
 }
 .section-sentence-release{
     font-size: $space_m;
+    @include mq{
+        font-size: $space_m +3;
+    }
 }
 .section-sentence-voice{
     font-size: $space_l;
@@ -286,13 +451,20 @@ img {
 
 .c-intro-wrap{
     margin: 0 auto;
+    padding: 0 20px;
 }
 
 .c-introduction{
     font-weight: 600;
     margin-bottom: 30px;
     text-align: center;
+    @include mq{
+        text-align: left;
+    }
     &-contact{
+        font-weight: 600;
+        margin-bottom: 30px;
+        text-align: center;
         color:   #FFFFFF;
     }
 }
@@ -325,6 +497,13 @@ img {
 
 .section-contact-box{
     width: 980px;
+    @include mq{
+        width: 100%;
+    }
+    @include mq_ipad{
+        width: 100%;
+    }
+
     margin: 0 auto;
     padding-top: 50px;
 }
@@ -336,6 +515,12 @@ img {
 }
 .contact-exit{
     display: flex;
+    @include mq{
+        flex-wrap: wrap;
+    }
+    @include mq_ipad{
+        flex-wrap: wrap;
+    }
     justify-content: center;
     align-items: center;
     margin: 0 auto;
@@ -350,6 +535,9 @@ img {
         margin-right: 20px;
         align-items: flex-end;
         font-size: $font-size_s;
+        @include mq{
+            font-size: $font-size_m;
+        }
     }
     &-btn{
         align-items: flex-end;
@@ -364,9 +552,16 @@ img {
             color: #FFFFFF;
             margin-right: 10px;
         }
-    
     }
 }
+
+//br
+.br-appear > br{
+    display: none;
+    @include mq{
+        display: inline;
+    }    
+} 
 
 // ==================================
 // table
@@ -390,19 +585,35 @@ table.section-table{
         width: 200px;
     }
     &-item{
+        vertical-align: middle;
         padding: 10px 15px;
         width: 400px;
     }
 }
 
 // ==================================
+// contact
+// ==================================
+
+.area-wrap{
+    padding: 0 20px;
+}
+
+
+// ==================================
 // footer
 // ==================================
 
 #l-footer{
-    width: 100%;
     color: #FFFFFF;
     text-align: center;
     padding: $space_l;
     background-color: $background-color_main;
 }
+
+#l-footer > br{
+    display: none;
+    @include mq{
+        display: inline;
+    }    
+} 
