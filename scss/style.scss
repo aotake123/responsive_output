@@ -33,6 +33,7 @@
 // 変数
 // ==============================
 $background-color_main:  #29539c;
+$backgorund-color_hover: #395c97;
 $backgorund-color_sub: #e7edf7;
 $color_corp:  #f6f8f9;
 $background-color_extra:  #e5e5e5;
@@ -104,11 +105,6 @@ a {
     transition: .2s;
 }
 
-a:hover {
-    color: $background-color_main;
-    transition: .2s;
-}
-
 img {
     width: 100%;
     vertical-align: bottom;
@@ -120,6 +116,7 @@ img {
 #l-header{
     width: $site-width;
     margin: 0 auto;
+    z-index: 2;
     @include mq{
         width: 100%;
         height: 70px;
@@ -202,6 +199,13 @@ img {
     align-items: center;
     background-color: $background-color_main;
 }
+.contact:hover{
+    background: $backgorund-color_hover;
+    cursor: pointer;
+    transition: all 1s;
+    box-shadow: 1px 1px 1px $background-color_extra;
+    transform: translateY(-2px);
+}
 
 // ==================================
 // menu
@@ -245,8 +249,13 @@ img {
 
 .nav-menu {
     margin-top: 30px;
+    @include mq_ipad{
+        margin-left: auto;
+        margin-right: 20px;
+    }
     @include mq() {
     margin-top: 0px;
+    margin-right: 0px;
     display: block;
     position: absolute;
     top: 0;
@@ -261,10 +270,6 @@ img {
         transform: translateX(-100%);
         z-index: 2;
         }
-    }
-    @include mq_ipad{
-        margin-left: auto;
-        margin-right: 20px;
     }
 }
 
@@ -282,6 +287,9 @@ img {
         border-bottom: 5px solid $backgorund-color_sub;
         margin-bottom: $space_m;
         padding: $space_m;
+        @include mq_ipad{
+            font-size: $font-size_m;
+        }
         @include mq{
             margin-bottom: 0;
             border-bottom: 1px solid $background-color_extra;
@@ -289,8 +297,10 @@ img {
             font-size: $font-size_l;    
             font-weight: 500;
         }
-        @include mq_ipad{
-            font-size: $font-size_m;
+        &:hover{
+            color: $background-color_main;
+            border-bottom: 5px solid $background-color_main;
+            transition: .2s;        
         }
     }
     &-top{
@@ -351,11 +361,11 @@ img {
 
 .section-box{
     width: 980px;
-    @include mq{
-        width: 100%;
-    }
     @include mq_ipad{
         width: 100%
+    }
+    @include mq{
+        width: 100%;
     }
     margin: 0 auto;
     padding-top: 50px;
@@ -363,7 +373,21 @@ img {
     &-inner{
         width: 220px;
         margin: 0 $space_m;
+        background-color: #FFFFFF;
+        position: relative;
         align-items: top;
+        &-hover {
+            display: inline-block;
+            transition: .5s;
+            &:hover {
+              transform: scale(1.03);
+              box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+              transition: .5s;
+            }
+          }
+        @include mq_ipad{
+            margin: 0 auto 30px $space_m;
+        }
         @include mq{
             width: 100%;
             margin: 0 auto 30px auto;
@@ -381,12 +405,16 @@ img {
     }
     &-voiceInner{
         width: 400px;
+        margin: 0 10px 30px 10px;
+        align-items: top;
+        @include mq_ipad{
+            margin: 0 auto 30px auto;
+        }
+
         @include mq{
             width: 100%;
             margin: 0 auto 30px auto;
         }
-        margin: 0 10px 30px 10px;
-        align-items: top;
     }
     &-voiceInner > span{
         font-size: $font-size_m +1;
@@ -398,20 +426,21 @@ img {
     margin: 0 auto 30px auto;
     padding: 0 $space_xl;
     display: flex;
-    @include mq{
+    @include mq_ipad{
+        width: 480px;
         flex-wrap: wrap;
     }
-    @include mq_ipad{
+    @include mq{
         flex-wrap: wrap;
     }
 }
 .section-wrap-voice{
     margin: 0 auto;
     display: flex;
-    @include mq{
+    @include mq_ipad{
         flex-wrap: wrap;
     }
-    @include mq_ipad{
+    @include mq{
         flex-wrap: wrap;
     }
 }
@@ -458,6 +487,10 @@ img {
     font-weight: 600;
     margin-bottom: 30px;
     text-align: center;
+    @include mq_ipad{
+        padding: 0 80px;
+        text-align: left;
+    }
     @include mq{
         text-align: left;
     }
@@ -497,10 +530,10 @@ img {
 
 .section-contact-box{
     width: 980px;
-    @include mq{
+    @include mq_ipad{
         width: 100%;
     }
-    @include mq_ipad{
+    @include mq{
         width: 100%;
     }
 
@@ -512,13 +545,12 @@ img {
 }
 .contact-exit{
     color: #FFFFFF;
-}
-.contact-exit{
     display: flex;
-    @include mq{
-        flex-wrap: wrap;
-    }
     @include mq_ipad{
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    @include mq{
         flex-wrap: wrap;
     }
     justify-content: center;
@@ -535,7 +567,7 @@ img {
         margin-right: 20px;
         align-items: flex-end;
         font-size: $font-size_s;
-        @include mq{
+        @include mq_ipad{
             font-size: $font-size_m;
         }
     }
@@ -553,6 +585,12 @@ img {
             margin-right: 10px;
         }
     }
+    &-btn:hover{
+    background: $backgorund-color_hover;
+    cursor: pointer;
+    transition: all 1s;
+    transform: translateY(-2px);
+    }
 }
 
 //br
@@ -560,6 +598,12 @@ img {
     display: none;
     @include mq{
         display: inline;
+    }    
+} 
+.br-hide > br{
+    display: inline;
+    @include mq_ipad{
+        display: none;
     }    
 } 
 
