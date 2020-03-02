@@ -4,20 +4,57 @@
    ========================================================================== */
 /* Reset
    ----------------------------------------------------------------- */
-/* Base
-   ----------------------------------------------------------------- */
-/* ==========================================================================
-   Layout
-   ========================================================================== */
-/* Header
-   ----------------------------------------------------------------- */
-/* Main
-    ----------------------------------------------------------------- */
-#l-main {
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
   margin: 0;
   padding: 0;
-  width: 100%; }
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
 
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* Base
+   ----------------------------------------------------------------- */
+/* 変数
+    ----------------------------------------------------------------- */
 html, body {
   width: 100%;
   color: #1e1e1e;
@@ -40,6 +77,11 @@ img {
   width: 100%;
   vertical-align: bottom; }
 
+/* ==========================================================================
+   Layout
+   ========================================================================== */
+/* Header
+   ----------------------------------------------------------------- */
 #l-header {
   width: 980px;
   margin: 0 auto;
@@ -54,25 +96,59 @@ img {
     #l-header {
       width: 100%; } }
 
-.header-section-wrap {
+/* Main
+    ----------------------------------------------------------------- */
+#l-main {
+  margin: 0;
+  padding: 0;
+  width: 100%; }
+
+/* Footer
+    ----------------------------------------------------------------- */
+#l-footer {
+  color: #FFFFFF;
+  text-align: center;
+  padding: 15px;
+  background-color: #29539c; }
+
+/* ==========================================================================
+   Object
+   ========================================================================== */
+/* Compornent
+   -------------------------------- */
+.c-section-wrap {
   width: 100%;
   height: 80px;
   display: flex;
   padding: 10px 0 40px 0; }
   @media screen and (max-width: 414px) {
-    .header-section-wrap {
+    .c-section-wrap {
       height: 51px;
       margin-right: 20px;
       padding: 10px 0 10px 0;
       position: relative; } }
 
-.header-section-box {
+.p-header__article {
   align-items: flex-end;
   display: flex; }
+
+/* Project
+   -------------------------------- */
+.p-header {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  padding: 10px 0 40px 0; }
   @media screen and (max-width: 414px) {
-    .header-section-box-right {
-      width: 100%;
-      margin: auto 0; } }
+    .p-header {
+      height: 51px;
+      margin-right: 20px;
+      padding: 10px 0 10px 0;
+      position: relative; } }
+
+.p-header__article {
+  align-items: flex-end;
+  display: flex; }
 
 .header-contact {
   width: 250px;
@@ -136,6 +212,11 @@ img {
     width: 980px;
     margin: 0 auto;
     padding: 40px 15px 40px 60px; }
+    @media screen and (max-width: 768px) {
+      .main-image-wrap {
+        width: 100%;
+        padding: 40px 0 40px 0;
+        text-align: center; } }
     @media screen and (max-width: 414px) {
       .main-image-wrap {
         width: 100%;
@@ -302,6 +383,7 @@ img {
     letter-spacing: 0.05em; }
 
 .section-wrap {
+  width: 100%;
   margin: 0 auto 30px auto;
   padding: 0 20px;
   display: flex; }
@@ -311,7 +393,10 @@ img {
       flex-wrap: wrap; } }
   @media screen and (max-width: 414px) {
     .section-wrap {
-      flex-wrap: wrap; } }
+      width: 100%;
+      flex-wrap: wrap;
+      padding: 0 20px;
+      box-sizing: border-box; } }
 
 .section-wrap-voice {
   margin: 0 auto;
@@ -489,14 +574,15 @@ table.section-table {
 .area-wrap {
   padding: 0 20px; }
 
-#l-footer {
-  color: #FFFFFF;
-  text-align: center;
-  padding: 15px;
-  background-color: #29539c; }
-
 #l-footer > br {
   display: none; }
   @media screen and (max-width: 414px) {
     #l-footer > br {
       display: inline; } }
+
+/* Utility
+   -------------------------------- */
+@media screen and (max-width: 414px) {
+  .u-header__article--spMenu {
+    width: 100%;
+    margin: auto 0; } }

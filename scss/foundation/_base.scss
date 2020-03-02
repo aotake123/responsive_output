@@ -1,0 +1,76 @@
+/* Base
+   ----------------------------------------------------------------- */
+
+/* 変数
+    ----------------------------------------------------------------- */
+    $background-color_main:  #29539c;
+    $backgorund-color_hover: #395c97;
+    $backgorund-color_sub: #e7edf7;
+    $background-color_extra:  #e5e5e5;
+    $font-color-default: #1e1e1e;
+    
+    $site-width: 980px;
+    $large-image-height: 200px;
+    
+    $font-size_s: 12px;
+    $font-size_m: 14px;
+    $font-size_default: 16px;
+    $font-size_l: 18px;
+    $font-size_xl: 24px;
+    $font-size_xxl: 30px;
+    $font-size_3l: 48px;
+    
+    $space_s: 5px;
+    $space_m: 10px;
+    $space_l: 15px;
+    $space_xl: 20px;
+    $space_xxl: 30px;
+    $space_3xl: 40px;
+    
+    // マップ型変数
+    $breakpoints: (
+      'sm': 'screen and (max-width: 414px)',
+      'md': 'screen and (max-width: 768px)',
+      'lg': 'screen and (max-width: 1000px)',
+    ) !default;
+    
+    
+    //mixin
+    @mixin mq($breakpoint: sm) {
+        @media #{map-get($breakpoints, $breakpoint)} {
+          @content;
+        }
+    }
+    @mixin mq_ipad($breakpoint: md) {
+      @media #{map-get($breakpoints, $breakpoint)} {
+        @content;
+        }
+    }
+    
+    
+    html, body {
+        width: 100%;
+        color: $font-color_default;
+        font-size: $font-size_default;
+        font-family: 'Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック',YuGothic,'Yu Gothic','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic';
+        line-height: 1.5;
+        text-size-adjust: 100%;
+        letter-spacing: 0em;
+        font-feature-settings: "palt" 1;
+    }
+    
+    p, a {
+        -webkit-font-smoothing: antialiased;
+    }
+      
+    a {
+        color: $font-color_default;
+        text-decoration: none;
+        transition: .2s;
+    }
+    
+    img {
+        width: 100%;
+        vertical-align: bottom;
+    }
+    

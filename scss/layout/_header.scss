@@ -1,0 +1,17 @@
+/* Header
+   ----------------------------------------------------------------- */
+
+   #l-header{
+    width: $site-width;
+    margin: 0 auto;
+    z-index: 2;
+    @include mq{
+        width: 100%;
+        height: 70px;
+        background-color: #FFFFFF;
+        position: fixed;
+    }
+    @include mq_ipad{
+        width: 100%;
+    }
+}

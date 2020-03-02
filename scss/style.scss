@@ -1,134 +1,24 @@
 /* ==========================================================================
    Foundation
    ========================================================================== */
-
-/* Reset
-   ----------------------------------------------------------------- */
-
-/* Base
-   ----------------------------------------------------------------- */
-//bodyタグに関するプロパティ
+@import "foundation/reset.scss";
+@import "foundation/base.scss";
 
 /* ==========================================================================
    Layout
    ========================================================================== */
+@import "layout/header.scss";
+@import "layout/main.scss";
+@import "layout/footer.scss";
 
-/* Header
-   ----------------------------------------------------------------- */
+/* ==========================================================================
+   Object
+   ========================================================================== */
 
-   //#header
+/* Compornent
+   -------------------------------- */
 
-/* Main
-    ----------------------------------------------------------------- */
-
-#l-main{
-    margin: 0;
-    padding: 0;
-    width: 100%;
-}
-   
-
-
-// ==============================
-// 変数
-// ==============================
-$background-color_main:  #29539c;
-$backgorund-color_hover: #395c97;
-$backgorund-color_sub: #e7edf7;
-$color_corp:  #f6f8f9;
-$background-color_extra:  #e5e5e5;
-
-$font-color-default: #1e1e1e;
-
-$site-width: 980px;
-$large-image-height: 200px;
-
-$font-size_s: 12px;
-$font-size_m: 14px;
-$font-size_default: 16px;
-$font-size_l: 18px;
-$font-size_xl: 24px;
-$font-size_xxl: 30px;
-$font-size_3l: 48px;
-
-$space_s: 5px;
-$space_m: 10px;
-$space_l: 15px;
-$space_xl: 20px;
-$space_xxl: 30px;
-$space_3xl: 40px;
-
-// マップ型変数
-$breakpoints: (
-  'sm': 'screen and (max-width: 414px)',
-  'md': 'screen and (max-width: 768px)',
-  'lg': 'screen and (max-width: 1000px)',
-) !default;
-
-
-//mixin
-@mixin mq($breakpoint: sm) {
-    @media #{map-get($breakpoints, $breakpoint)} {
-      @content;
-    }
-}
-@mixin mq_ipad($breakpoint: md) {
-  @media #{map-get($breakpoints, $breakpoint)} {
-    @content;
-    }
-}
-
-
-
-// ==================================
-// base
-// ==================================
-
-html, body {
-    width: 100%;
-    color: $font-color_default;
-    font-size: $font-size_default;
-    font-family: 'Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック',YuGothic,'Yu Gothic','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic';
-    line-height: 1.5;
-    text-size-adjust: 100%;
-    letter-spacing: 0em;
-    font-feature-settings: "palt" 1;
-}
-
-p, a {
-    -webkit-font-smoothing: antialiased;
-}
-  
-a {
-    color: $font-color_default;
-    text-decoration: none;
-    transition: .2s;
-}
-
-img {
-    width: 100%;
-    vertical-align: bottom;
-}
-
-// ==================================
-// header
-// ==================================
-#l-header{
-    width: $site-width;
-    margin: 0 auto;
-    z-index: 2;
-    @include mq{
-        width: 100%;
-        height: 70px;
-        background-color: #FFFFFF;
-        position: fixed;
-    }
-    @include mq_ipad{
-        width: 100%;
-    }
-}
-
-.header-section-wrap{
+.c-section-wrap{
     width: 100%;
     height: 80px;
     display: flex;
@@ -140,15 +30,37 @@ img {
         position: relative;
     }
 }
-.header-section-box{
+.p-header__article{
     align-items: flex-end;
     display: flex;
-    &-right{
-        @include mq{
-            width: 100%;
-            margin: auto 0;
-        }
+}
+
+/* Project
+   -------------------------------- */
+
+
+   
+
+
+// ==================================
+// header
+// ==================================
+
+.p-header{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    padding: 10px 0 40px 0;
+    @include mq{
+        height: 51px;
+        margin-right: 20px;
+        padding: 10px 0 10px 0;
+        position: relative;
     }
+}
+.p-header__article{
+    align-items: flex-end;
+    display: flex;
 }
 .header-contact{
     width: 250px;
@@ -223,6 +135,11 @@ img {
         width: 980px;
         margin: 0 auto;
         padding: $space_3xl $space_l $space_3xl 60px;
+        @include mq_ipad{
+            width: 100%;
+            padding: $space_3xl 0 $space_3xl 0;
+            text-align: center;
+        }
         @include mq{
             width: 100%;
             padding: $space_3xl 0 $space_3xl 0;
@@ -359,6 +276,7 @@ img {
 // container
 // ==================================
 
+
 .section-box{
     width: 980px;
     @include mq_ipad{
@@ -423,6 +341,7 @@ img {
     }
 }
 .section-wrap{
+    width: 100%;
     margin: 0 auto 30px auto;
     padding: 0 $space_xl;
     display: flex;
@@ -431,7 +350,11 @@ img {
         flex-wrap: wrap;
     }
     @include mq{
+        width: 100%;
         flex-wrap: wrap;
+        padding: 0 $space_xl;
+        box-sizing: border-box;
+
     }
 }
 .section-wrap-voice{
@@ -648,12 +571,6 @@ table.section-table{
 // footer
 // ==================================
 
-#l-footer{
-    color: #FFFFFF;
-    text-align: center;
-    padding: $space_l;
-    background-color: $background-color_main;
-}
 
 #l-footer > br{
     display: none;
@@ -661,3 +578,14 @@ table.section-table{
         display: inline;
     }    
 } 
+
+
+/* Utility
+   -------------------------------- */
+
+.u-header__article--spMenu{
+    @include mq{
+        width: 100%;
+        margin: auto 0;
+    }
+}
