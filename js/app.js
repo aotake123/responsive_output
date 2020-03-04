@@ -9,7 +9,7 @@ $(function(){
   //SPメニューの展開後のリンクを押した際に戻す操作
   $('.js-toggle-menu-link').on('click', function(){
     $('.js-toggle-sp-menu').removeClass('active');
-    $('html').removeClass('menu');
+    $('html').removeClass('p-header__naviMenu-wrap');
     $('.js-toggle-sp-menu-target').removeClass('active');
   });
 

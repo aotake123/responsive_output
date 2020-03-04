@@ -15,44 +15,44 @@
     <header id="l-header">
         <section class="p-header">
             <div class="p-header__article">
-                <h1 class="title-logo"><a href=""><img src="./img/title-logo.png" alt="帝国防災株式会社"></a></h1>
+                <h1 class="p-header__artcle-titleLogo"><a href=""><img src="./img/title-logo.png" alt="帝国防災株式会社"></a></h1>
             </div>
             <div class="p-header__article u-header__article--spMenu">
 
-                <div class="menu-trigger js-toggle-sp-menu">
+                <div class="p-header__article--spMenu-trigger js-toggle-sp-menu">
                     <span></span>
                     <span></span>
                     <span></span>
                 </div>
             </div>
-            <nav class="nav-menu js-toggle-sp-menu-target">
-                <ul class="menu">
-                    <li class="menu-item menu-top"><a class="menu-link" href="index.html">HOME</a></li>
-                    <li class="menu-item"><a class="menu-link" href="#l-main__service">サービス案内</a></li>
-                    <li class="menu-item"><a class="menu-link" href="#l-main__works">実績紹介</a></li>
-                    <li class="menu-item"><a class="menu-link" href="#l-main__voice">お客様の声</a></li>
-                    <li class="menu-item"><a class="menu-link" href="#l-main__company">会社概要</a></li>
+            <nav class="p-header__naviMenu js-toggle-sp-menu-target">
+                <ul class="p-naviMenu">
+                    <li class="p-naviMenu-item p-naviMenu-top js-toggle-menu-link"><a class="p-naviMenu-link" href="#l-main">HOME</a></li>
+                    <li class="p-naviMenu-item js-toggle-menu-link"><a class="p-naviMenu-link" href="#l-main__service">サービス案内</a></li>
+                    <li class="p-naviMenu-item js-toggle-menu-link"><a class="p-naviMenu-link" href="#l-main__works">実績紹介</a></li>
+                    <li class="p-naviMenu-item js-toggle-menu-link"><a class="p-naviMenu-link" href="#l-main__voice">お客様の声</a></li>
+                    <li class="p-naviMenu-item js-toggle-menu-link"><a class="p-naviMenu-link" href="#l-main__company">会社概要</a></li>
                 </ul>
             </nav>
 
-            <div class="p-header__article header-contact">
-                <div class="tel">
-                    <div class="tel1">お問い合わせ</div>
-                    <div class="tel2">03-9999-0123</div>
-                    <div class="tel3">営業時間 9:00−17:30<br />(土日・祝日を除く)</div>
+            <div class="p-header__article p-header__contact">
+                <div class="p-header__contact-wrap">
+                    <div class="p-header__contact-subject">お問い合わせ</div>
+                    <div class="p-header__contact-tel">03-9999-0123</div>
+                    <div class="p-header__contact-time">営業時間 9:00−17:30<br />(土日・祝日を除く)</div>
                 </div>
-                <div class="contact">お問い合わせ</div>
-            </div>    
+                <div class="p-header__contact-button">お問い合わせ</div>
+            </div>
         </section>
     </header>
     <main id="l-main">
-        <section class="main-image">
-            <div class="main-image-wrap">
-                <span class="main-image-preCopy">
+        <section class="p-main__topBanner">
+            <div class="p-main__topBanner-wrap">
+                <span class="p-main__topBanner-preCopy">
                     公共施設・商業施設、<br />
                     一般家庭の防災管理を<br />
                     徹底サポートします</span>
-                <p class="main-image-headCopy">創立88周年の実績と信頼 消防設備点検・修繕から<br />
+                <p class="p-main__topBanner-headCopy">創立88周年の実績と信頼 消防設備点検・修繕から<br />
                 リニューアルまでの幅広い対応で、人の命と建物を守り、<br />
                 安心・安全な街と生活環境を提供する防災会社です。<br />
                 </p>    
@@ -60,9 +60,9 @@
         </section>
 
         <section id="l-main__service" class="section-box">
-            <div class="title-wrap">
-                <p class="title-en">SERVICE LINEUP</p>
-                <h2 class="title-jp">サービス案内</h2>
+            <div class="c-main__title-wrap">
+                <p class="c-main__title-en">SERVICE LINEUP</p>
+                <h2 class="c-main__title-jp">サービス案内</h2>
             </div>
             <div class="section-wrap">
                 <div class="section-box-inner">
@@ -99,9 +99,9 @@
         </section>
 
         <section id="l-main__works" class="section-box">
-            <div class="title-wrap">
-                <p class="title-en">WORKS</p>
-                <h2 class="title-jp">実績紹介</h2>
+            <div class="c-main__title-wrap">
+                <p class="c-main__title-en">WORKS</p>
+                <h2 class="c-main__title-jp">実績紹介</h2>
             </div>
             <div class="c-intro-wrap">
                 <p class="c-introduction br-hide">2020年現在、関東圏を中心に、合計1500件以上の建物の防火/防災設備の保守管理を担当させて頂いております。<br />
@@ -153,9 +153,9 @@
         </section>
 
         <section id="l-main__voice" class="section-box">
-            <div class="title-wrap">
-                <p class="title-en">VOICE</p>
-                <h2 class="title-jp">お客様の声</h2>
+            <div class="c-main__title-wrap">
+                <p class="c-main__title-en">VOICE</p>
+                <h2 class="c-main__title-jp">お客様の声</h2>
             </div>
             <div class="section-wrap">
                 <div class="section-wrap-voice">
@@ -185,9 +185,9 @@
         </section>
 
         <section id="l-main__company" class="section-box">
-            <div class="title-wrap">
-                <p class="title-en">COMPANY</p>
-                <h2 class="title-jp">会社概要</h2>
+            <div class="c-main__title-wrap">
+                <p class="c-main__title-en">COMPANY</p>
+                <h2 class="c-main__title-jp">会社概要</h2>
             </div>
             <div class="section-wrap">
 
@@ -224,11 +224,11 @@
         <div class="contact-image">
         <section id="l-main__contact" class="section-contact-box">
             <div class="area-wrap">
-                <div class="title-wrap">
+                <div class="c-main__title-wrap">
                     <div class="contact-subject">
-                        <p class="title-en-contact">CONTACT</p>
+                        <p class="c-main__title-en-contact">CONTACT</p>
                     </div>
-                    <h2 class="title-jp-contact">お問い合わせ</h2>
+                    <h2 class="c-main__title-jp-contact">お問い合わせ</h2>
                 </div>
                 <div class="c-introduction-contact">
                     <p>防災設備や消防設備に関する事なら、<br />何でも気軽にご連絡・ご相談ください。</p>
