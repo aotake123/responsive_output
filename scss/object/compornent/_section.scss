@@ -1,0 +1,82 @@
+//c-main__sectionBox
+.section-box{
+    width: 980px;
+    @include mq_ipad{
+        width: 100%
+    }
+    @include mq{
+        width: 100%;
+    }
+    margin: 0 auto;
+    padding-top: 50px;
+    border-top: 0.5px solid $background-color_extra;
+    &-inner{
+        width: 220px;
+        margin: 0 $space_m;
+        background-color: #FFFFFF;
+        position: relative;
+        align-items: top;
+        &-hover {
+            display: inline-block;
+            transition: .5s;
+            &:hover {
+              transform: scale(1.03);
+              box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+              transition: .5s;
+            }
+          }
+        @include mq_ipad{
+            margin: 0 auto 30px $space_m;
+        }
+        @include mq{
+            width: 100%;
+            margin: 0 auto 30px auto;
+        }
+    }
+    &-inner > h3, &-voiceInner > h3{
+        font-size: $font-size_m + 1;
+        font-weight: 600;
+        margin-top: $space_m;
+        margin-bottom: $space_s;
+    }
+    &-inner > p, &-voiceInner > p{
+        line-height: 1.6;
+        letter-spacing: 0.05em;
+    }
+    &-voiceInner{
+        width: 400px;
+        margin: 0 10px 30px 10px;
+        align-items: top;
+        @include mq_ipad{
+            margin: 0 auto 30px auto;
+        }
+
+        @include mq{
+            width: 100%;
+            margin: 0 auto 30px auto;
+        }
+    }
+    &-voiceInner > span{
+        font-size: $font-size_m +1;
+        font-weight: 500;
+        letter-spacing: 0.05em;
+    }
+}
+
+//.c-main__section-wrap
+.section-wrap{
+    width: 100%;
+    margin: 0 auto 30px auto;
+    padding: 0 $space_xl;
+    display: flex;
+    @include mq_ipad{
+        width: 480px;
+        flex-wrap: wrap;
+    }
+    @include mq{
+        width: 100%;
+        flex-wrap: wrap;
+        padding: 0 $space_xl;
+        box-sizing: border-box;
+    }
+}

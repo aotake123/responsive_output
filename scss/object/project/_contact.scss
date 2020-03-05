@@ -1,0 +1,83 @@
+//p-main__contact
+.contact-image{
+    width: 100%;
+    background-image: url("../img/contact-image.jpg");
+    background-size: cover;
+    background-color: $background-color_extra;
+    margin-bottom: 60px;
+    padding-bottom: 50px;
+}
+.section-contact-box{
+    width: 980px;
+    @include mq_ipad{
+        width: 100%;
+    }
+    @include mq{
+        width: 100%;
+    }
+    margin: 0 auto;
+    padding-top: 50px;
+}
+.section-contact-box > h2{
+    color: #FFFFFF;
+}
+.p-main__contact-wrap{
+    padding: 0 20px;
+}
+
+//.p-main__contact-exit
+.contact-exit{
+    color: #FFFFFF;
+    display: flex;
+    @include mq_ipad{
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    @include mq{
+        flex-wrap: wrap;
+    }
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    -webkit-font-smoothing: antialiased;
+    &-tel{
+        align-items: flex-end;
+        font-size: 40px;
+    }
+    &-tel a{
+        color: #FFFFFF;
+    }
+    &-tel a:active{
+        color: #FFFFFF;
+    }
+    &-time{
+        text-align: center;
+        margin-left: 10px;
+        margin-right: 20px;
+        align-items: flex-end;
+        font-size: $font-size_s;
+        @include mq_ipad{
+            font-size: $font-size_m;
+        }
+    }
+    &-btn{
+        align-items: flex-end;
+        text-align: center;
+        color: #FFFFFF;
+        font-size: $font-size_l;
+        margin: $space_m;
+        padding: $space_l $space_xl;
+        background-color: $background-color_main;
+        border-radius: 3px;
+        &-icon{
+            color: #FFFFFF;
+            margin-right: 10px;
+        }
+    }
+    &-btn:hover{
+    background: $backgorund-color_hover;
+    cursor: pointer;
+    transition: all 1s;
+    transform: translateY(-2px);
+    }
+}

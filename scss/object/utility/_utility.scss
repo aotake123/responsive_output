@@ -1,0 +1,43 @@
+.u-header__article--spMenu{
+    @include mq{
+        width: 100%;
+        margin: auto 0;
+    }
+}
+.u-main__works-ribon{
+    &-wrap{
+        display: flex;
+    }
+    &-main{
+        align-items: center;
+        background-color: $background-color_main;
+        width: 3px;
+        height: auto;
+        margin: 7px 5px 7px 3px;
+    }
+    &-item{
+        align-items: center;
+        font-size: $font-size_m + 1;
+        font-weight: 600;
+        margin-top: $space_m;
+        margin-bottom: $space_s;    
+    }
+}
+.u-brAppear > br{
+    display: none;
+    @include mq_ipad{
+        display: inline;
+    }    
+} 
+.u-brHide > br{
+    display: inline;
+    @include mq_ipad{
+        display: none;
+    }    
+} 
+.u-brHide--se > br{
+    display: inline;
+    @include mq_iphoneSE{
+        display: none;
+    }    
+}

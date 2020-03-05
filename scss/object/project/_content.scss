@@ -1,0 +1,21 @@
+//p-main__voice
+.section-wrap-voice{
+    margin: 0 auto;
+    display: flex;
+    @include mq_ipad{
+        flex-wrap: wrap;
+    }
+    @include mq{
+        flex-wrap: wrap;
+    }
+}
+
+.section-sentence-release{
+    font-size: $space_m;
+    @include mq{
+        font-size: $space_m +3;
+    }
+}
+.section-sentence-voice{
+    font-size: $space_l;
+}

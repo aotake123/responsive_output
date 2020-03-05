@@ -1,0 +1,26 @@
+
+// p-main__company
+table.p-main__company{
+    border: 1px solid #FFF;
+}
+.p-main__company{
+    width: 600px;
+    text-align: left;
+    margin: 0 auto 40px auto;
+    @include mq{
+        width: 100%;
+    }
+    &-tr{
+        border-bottom: 1px solid $background-color_extra;
+    }
+    &-head{
+        vertical-align: middle;
+        padding: 10px 15px;
+        width: 200px;
+    }
+    &-item{
+        vertical-align: middle;
+        padding: 10px 15px;
+        width: 400px;
+    }
+}
