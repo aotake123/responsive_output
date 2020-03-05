@@ -235,7 +235,8 @@ img {
     text-align: center;
     border-bottom: 5px solid #e7edf7;
     margin-bottom: 10px;
-    padding: 10px; }
+    padding: 10px;
+    white-space: nowrap; }
     @media screen and (max-width: 768px) {
       .p-naviMenu-item {
         font-size: 14px; } }
@@ -485,6 +486,10 @@ img {
   .contact-exit-tel {
     align-items: flex-end;
     font-size: 40px; }
+  .contact-exit-tel a {
+    color: #FFFFFF; }
+  .contact-exit-tel a:active {
+    color: #FFFFFF; }
   .contact-exit-time {
     text-align: center;
     margin-left: 10px;
@@ -531,6 +536,9 @@ table.section-table {
   width: 600px;
   text-align: left;
   margin: 0 auto 40px auto; }
+  @media screen and (max-width: 414px) {
+    .section-table {
+      width: 100%; } }
   .section-table-tr {
     border-bottom: 1px solid #e5e5e5; }
   .section-table-head {

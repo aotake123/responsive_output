@@ -166,6 +166,7 @@
         border-bottom: 5px solid $backgorund-color_sub;
         margin-bottom: $space_m;
         padding: $space_m;
+        white-space: nowrap;
         @include mq_ipad{
             font-size: $font-size_m;
         }
@@ -457,6 +458,12 @@
         align-items: flex-end;
         font-size: 40px;
     }
+    &-tel a{
+        color: #FFFFFF;
+    }
+    &-tel a:active{
+        color: #FFFFFF;
+    }
     &-time{
         text-align: center;
         margin-left: 10px;
@@ -516,6 +523,9 @@ table.section-table{
     width: 600px;
     text-align: left;
     margin: 0 auto 40px auto;
+    @include mq{
+        width: 100%;
+    }
     &-tr{
         border-bottom: 1px solid $background-color_extra;
     }
